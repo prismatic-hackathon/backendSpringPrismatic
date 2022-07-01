@@ -11,7 +11,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class WeatherController {
     private WeatherService weatherService;
-
+    private String weatherBaseURL =  "https://api.openweathermap.org/data/3.0/onecall?";
+    private String apiKEY = "8692a5fdc5525d6d03aa2f9683c1666f";
     public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
 
