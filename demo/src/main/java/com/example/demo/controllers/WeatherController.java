@@ -18,8 +18,20 @@ public class WeatherController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/weather/{location}")
-    public String getAccounts(@PathVariable String location) throws IOException {
+    public String getWeather(@PathVariable String location) throws IOException {
         return this.weatherService.getWeather(location);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/forcast/{location}")
+    public String getForcast(@PathVariable String location, @PathVariable int days) throws IOException {
+        return this.weatherService.getForcast(location,days);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/timezone/{location}")
+    public String getTimezone(@PathVariable String location) throws IOException {
+        return this.weatherService.getTimezone(location);
     }
 
 }
